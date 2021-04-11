@@ -17,6 +17,10 @@ app.use(bodyPraser.urlencoded({ extended: true }));
 app.use(bodyPraser.json());
 app.use(cookieParser());
 
+app.get("/", (req, res) => {
+  res.json({ hello: "Deployed" });
+});
+
 app.get("/api/user/auth", auth, (req, res) => {
   res.status(200).json({
     _id: req._id,
